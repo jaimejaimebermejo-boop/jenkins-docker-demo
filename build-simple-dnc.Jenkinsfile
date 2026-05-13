@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build and Push') {
             steps {
-                script {
+                script { 
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhubcreds') {
                         sh '''
                             docker buildx create --use --name mybuilder || true
